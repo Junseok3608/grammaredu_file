@@ -1,0 +1,313 @@
+[slides]
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중언어 화자의 어휘적 특징 분석 발표자료</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 기본 설정 */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 20px 0; background-color: #f1f5f9; display: grid; place-items: center; min-height: 100vh; }
+
+        .slide-container {
+            width: 1280px; height: 720px;
+            background-color: #fffdf9; /* 크림색 배경 */
+            color: #1e293b;
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow: hidden;
+            position: relative;
+            display: flex; flex-direction: column;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+
+        /* 배경 디자인: 학술적 느낌의 기하학적 요소 */
+        .slide-container::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 10px;
+            background: linear-gradient(90deg, #003366, #005088); z-index: 10;
+        }
+
+        /* 타이틀 스타일 */
+        h1 { font-family: 'Nanum+Myeongjo', serif; font-size: 64px; color: #003366; margin: 0; line-height: 1.2; }
+        .slide-title { font-family: 'Nanum+Myeongjo', serif; font-size: 42px; color: #003366; border-bottom: 3px solid #003366; padding-bottom: 15px; margin-bottom: 40px; text-align: left; width: 100%; }
+        h3 { font-size: 28px; color: #005088; margin-bottom: 20px; font-weight: 700; }
+
+        /* 텍스트 스타일 */
+        p, li { font-size: 20px; line-height: 1.6; color: #334155; margin-bottom: 12px; }
+        strong { color: #003366; }
+        .subtitle { font-size: 24px; color: #64748b; margin-top: 20px; }
+
+        /* 레이아웃 구성 요소 */
+        .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: start; width: 100%; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; height: 100%; }
+        
+        /* 텍스트 타일 스타일 */
+        .tiled-content { display: flex; gap: 20px; width: 100%; }
+        .tile { flex: 1; background: #f8fafc; padding: 25px; border-radius: 12px; border-left: 5px solid #005088; }
+        
+        /* 이미지 스타일 */
+        .image-wrapper { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* 불렛 포인트 커스텀 */
+        .bullet-list { list-style: none; padding: 0; }
+        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 18px; text-align: justify; }
+        .bullet-list li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #005088; top: 2px; }
+
+        /* 표 스타일 */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background-color: #003366; color: white; padding: 15px; text-align: left; font-size: 18px; }
+        td { padding: 15px; border-bottom: 1px solid #cbd5e1; font-size: 18px; }
+        tr:nth-child(even) { background-color: #f1f5f9; }
+
+        /* 섹션 타이틀 전용 */
+        .section-title-layout { text-align: center; justify-content: center; height: 100%; }
+        .section-title-layout h2 { font-family: 'Nanum+Myeongjo', serif; font-size: 80px; color: #003366; margin: 0; }
+        .section-title-layout hr { width: 100px; height: 5px; background: #005088; border: none; margin: 30px auto; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="content-area" style="justify-content: center; text-align: center;">
+        <p class="subtitle" style="margin-bottom: 10px;">한국어교육학과 이중언어교육론</p>
+        <h1 style="font-size: 56px;">재외동포 문학상 수상작 분석을 통한<br>이중언어 화자의 어휘적 특징 분석</h1>
+        <div style="margin-top: 50px;">
+            <p style="font-size: 26px; font-weight: 700;">발표자: 김준석 (2555701)</p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">1. 연구의 필요성: 이중언어 환경의 증가</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <ul class="bullet-list">
+                    <li>전 세계적으로 이중언어 화자의 수가 꾸준히 증가함에 따라, 이들의 인지적·언어적 특성에 대한 학계의 관심이 고조되고 있습니다. (Bialystok 2012, Babazade 2025)</li>
+                    <li>이중언어 화자는 두 언어와 문화 사이를 오가며 생활하므로, 단일언어 화자와는 차별화된 방식으로 어휘를 선택하고 결합하는 경향을 보입니다.</li>
+                    <li>하지만 한국어 기반 이중언어 화자가 실제 산출한 <strong>'자연스러운 텍스트'</strong>에 대한 구체적인 어휘 분석 연구는 아직 미진한 실정입니다.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/18363174057783336877" alt="Bilingual Brain Concept">
+                </div>
+                <p style="font-size: 14px; color: #94a3b8; margin-top: 10px; text-align: center;">[이미지: 이중언어 화자의 인지 처리 과정 모식도]</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">1. 연구의 필요성: 왜 문학 텍스트인가?</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <h3>문학적 산출물의 가치</h3>
+                <p>문학 작품은 화자의 정체성, 경험, 감정이 집약된 텍스트입니다. 화자가 보유한 언어 자원이 어떻게 전략적으로 선택되고 배치되는지 가장 잘 보여주는 자료입니다.</p>
+            </div>
+            <div class="tile">
+                <h3>재외동포 문학상의 특수성</h3>
+                <p>한국어와 현지어를 동시에 사용하는 이중·다중 언어 화자가 자신의 삶을 한국어로 형상화한 작품으로, 이들의 고유한 언어 사용 양상이 농축되어 있습니다.</p>
+            </div>
+            <div class="tile">
+                <h3>대조 분석의 용이성</h3>
+                <p>한국 내 사회 현상을 다루는 국내 문학상 수상작(단일언어 화자 중심)과 비교함으로써 이중언어 화자만의 변별적 특징을 명확히 도출할 수 있습니다.</p>
+            </div>
+        </div>
+        <p style="margin-top: 30px; font-style: italic; color: #475569;">※ 본 연구는 기존의 짧은 실험이나 인터뷰 중심 연구에서 벗어나, 실제 산출된 '문학 코퍼스'를 분석한다는 점에 의의가 있습니다.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">2. 연구 목적</h2>
+    <div class="content-area">
+        <div class="two-column" style="grid-template-columns: 0.8fr 1.2fr;">
+            <div style="background-color: #003366; padding: 40px; border-radius: 12px; color: white;">
+                <h3 style="color: #deecff;">핵심 목표</h3>
+                <p style="color: #deecff; font-size: 22px;">재외동포 및 국내 문학상 수상작을 대조하여, 이중언어 화자의 어휘 사용이 단일언어 화자와 어떤 점에서 차별화되는지 규명함</p>
+            </div>
+            <div>
+                <ul class="bullet-list">
+                    <li><strong>코퍼스 구축:</strong> 재외동포 및 국내 문학상 수상작 각각의 어휘 코퍼스를 구축하여 객관적인 데이터 분석 기반 마련</li>
+                    <li><strong>어휘 특성 도출:</strong> 빈도, 다양성, 연어 관계 등 통계적 지표를 통해 두 집단의 어휘적 공통점과 차이점 분석</li>
+                    <li><strong>인지적 연계:</strong> Baker 등이 제시한 이중언어 화자의 인지적 특성(유연성, 간섭 등)이 실제 텍스트 산출물에서 어떤 양상으로 표출되는지 논의</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">2. 연구 질문</h2>
+    <div class="content-area" style="justify-content: center;">
+        <div class="tile" style="margin-bottom: 20px; border-left: 10px solid #003366; background: #fff;">
+            <p style="font-size: 24px;"><strong>RQ 1.</strong> 재외동포 문학상 수상작에 나타나는 주요 어휘 사용 특징은 무엇인가?</p>
+        </div>
+        <div class="tile" style="margin-bottom: 20px; border-left: 10px solid #005088; background: #fff;">
+            <p style="font-size: 24px;"><strong>RQ 2.</strong> 국내 문학상 수상작과 재외동포 문학상 수상작의 어휘 사용 양상은 어떤 점이 유사하고 어떤 점이 다른가?</p>
+        </div>
+        <div class="tile" style="border-left: 10px solid #0077b6; background: #fff;">
+            <p style="font-size: 24px;"><strong>RQ 3.</strong> 문학 텍스트 분석 결과는 이중언어 화자 특유의 인지적·언어적 기제와 어떠한 상관관계를 가지는가?</p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">3.1 이중언어와 인지·언어 능력</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>주요 연구 동향</h3>
+                <ul class="bullet-list">
+                    <li><strong>Bialystok(2012):</strong> 이중언어 사용이 어휘 인출 속도 저하(비용)를 가져오지만, 갈등 해결 및 주의 전환 등 실행 통제 과제에서는 일관적 이점을 보임</li>
+                    <li><strong>Babazade(2025):</strong> 작업 기억과 신경 가소성 강화 및 언어 간섭으로 인한 처리 지연 논의</li>
+                    <li><strong>황순희(2016):</strong> 특정 연령대 이중언어 아동이 오히려 더 높은 의미적 유연성과 구체성을 보임을 입증</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2646196462746848051" alt="Global Migration/Diaspora Concept">
+                </div>
+                <p style="font-size: 16px; margin-top: 15px;">→ 이중언어 경험은 인지 전반에 영향을 미치며, 특히 어휘 선택에서 단일언어 화자와 다른 <strong>'유연성'</strong>과 <strong>'간섭'</strong>의 양상이 나타남</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">3.2 재외동포·디아스포라 문학과 어휘</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <div class="image-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/10181208176607496405" alt="Korean Books Stacks">
+                </div>
+            </div>
+            <div>
+                <ul class="bullet-list">
+                    <li><strong>오현아(2019):</strong> 조선족 작가의 텍스트 분석 결과, 남북한 요소를 수용하면서도 고유한 한자어 및 독특한 연어 관계를 사용하는 '독자적 언어' 기능을 확인</li>
+                    <li><strong>오지혜(2018):</strong> 수필 텍스트의 문화 어휘 분석을 통해 정체성의 이동(민족적 → 세계시민적)이 어휘 선택에 반영됨을 고찰</li>
+                    <li><strong>강진구·김성철(2021):</strong> 텍스트마이닝 결과, 기존 연구가 주로 정체성, 경계성 등 담론 차원에 치중되어 있음을 지적</li>
+                </ul>
+                <p style="background: #e2e8f0; padding: 15px; border-radius: 8px;"><strong>시사점:</strong> 기존 연구는 문화적 명사나 담론 분석에 한정되어 있어, 세부적인 어휘적 특징(연어, 통계적 분포 등)에 대한 보완이 필요함</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">3.3 코퍼스 기반 어휘 연구</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>텍스트 기반 통계 분석</h3>
+                <ul class="bullet-list">
+                    <li><strong>최지희(2026):</strong> 학습자 보고서 코퍼스 분석을 통해 원어민 대비 제한된 연어 의존 및 학술 연어 사용 부족 등 정량적 차이 확인</li>
+                    <li><strong>엄철주 외(2009):</strong> L1/L2 화자의 학술 논문 비교를 통해 상위담화 표지 사용의 전략적 차이(L2의 구조어 의존성 등) 규명</li>
+                </ul>
+            </div>
+            <div>
+                <div class="image-wrapper">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/11117710328500922156" alt="Corpus Linguistics Graph">
+                </div>
+                <p style="text-align: center; font-size: 16px;">[이미지: 코퍼스 분석을 통한 어휘 네트워크 시각화 예시]</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px;"><strong>본 연구의 차별성:</strong> 기존 코퍼스 연구가 주로 학술적 텍스트를 대상으로 한 것과 달리, 본 연구는 화자의 <strong>'창의적 언어 사용'</strong>이 극대화되는 문학 텍스트를 대상으로 함</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">4.1 연구 일정 및 수행 방법 (1단계 ~ 2단계)</h2>
+    <div class="content-area">
+        <div class="tile" style="margin-bottom: 30px;">
+            <h3>[1단계] 선행연구 정리 및 설계 확정</h3>
+            <ul class="bullet-list">
+                <li>이중언어 화자의 인지·언어적 특성(Baker 등) 이론 검토</li>
+                <li>재외동포 문학 및 코퍼스 언어학 방법론 최신 동향 정리</li>
+                <li>분석 범위 및 연구 질문 구체화</li>
+            </ul>
+        </div>
+        <div class="tile">
+            <h3>[2단계] 자료 수집 및 코퍼스 구축</h3>
+            <ul class="bullet-list">
+                <li>분석 대상 선정: 최근 재외동포 문학상 및 국내 문학상(신춘문예 등) 수상작 선정</li>
+                <li>데이터 정제: 텍스트 전사 및 특수기호 제거 등 정제(Preprocessing)</li>
+                <li>코퍼스 구축: 형태소 분석 및 태깅 과정을 통한 분석용 데이터베이스화</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">4.1 연구 일정 및 수행 방법 (3단계 ~ 5단계)</h2>
+    <div class="content-area">
+        <table>
+            <thead>
+                <tr>
+                    <th width="20%">단계</th>
+                    <th width="30%">핵심 과업</th>
+                    <th width="50%">세부 내용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>3단계</strong></td>
+                    <td>어휘 지표 분석</td>
+                    <td>어휘 다양성(TTR), 빈출 어휘군, 핵심어(Keywords), 연어(Collocation) 등 분석</td>
+                </tr>
+                <tr>
+                    <td><strong>4단계</strong></td>
+                    <td>비교 분석 및 해석</td>
+                    <td>두 집단 간 통계적 차이 도출 및 이중언어 화자의 인지적 특성과 연계한 담화적 해석</td>
+                </tr>
+                <tr>
+                    <td><strong>5단계</strong></td>
+                    <td>결과 정리</td>
+                    <td>연구 문제별 최종 답변 구성 및 한국어 교육적 제언 도출</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">4.2 기대 결과</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>학술적 기여</h3>
+                <ul class="bullet-list">
+                    <li>이중언어 화자의 어휘 사용이 단일언어 화자와 구체적으로 어떻게 다른지 <strong>'데이터 기반'</strong>으로 입증</li>
+                    <li>인지 처리 과제(실험)와 문학 비평(담론) 사이의 간극을 <strong>어휘 단위 분석</strong>으로 연결하는 새로운 방법론 제시</li>
+                </ul>
+            </div>
+            <div>
+                <h3>교육적·사회적 활용</h3>
+                <ul class="bullet-list">
+                    <li>재외동포 학습자의 어휘 교육 시, 이들의 인지적 강점을 활용한 교수 방안 마련의 근거 제공</li>
+                    <li>이중언어 화자의 언어를 '불완전한 언어'가 아닌, <strong>'풍부한 자원이 융합된 언어'</strong>로 보는 다문화적 인식 제고에 기여</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container section-title-layout" id="slide12">
+    <div class="content-area" style="text-align: center; justify-content: center;">
+        <hr>
+        <h2>경청해주셔서 감사합니다</h2>
+        </div>
+</div>
+
+</body>
+</html>
+
